@@ -41,9 +41,9 @@ export const updateTweet = async (req, res) =>{
         const { id } = req.params;
 
         const { tweet } = req.body;
-        console.log(tweet, 'tweet')
+        
         const existingTweet = await Tweet.findByIdAndUpdate(id, {tweet}, {new: true}).populate('user', 'username _id email').populate('comments', 'comment tweet _id');
-        console.log(existingTweet, 'existingTweet')
+     
         res.status(200).json({msg: 'Tweet updated', tweet: existingTweet});
     }
     catch(err){

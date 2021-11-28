@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
+    "start": "nodemon app",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,9 @@
     "mongoose": "^6.0.13",
     "nodemon": "^2.0.15",
     "validator": "^13.7.0"
+  },
+
+  "engines": {
+    "node": "14.18.1"
   }
 }
